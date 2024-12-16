@@ -14,6 +14,7 @@ Requires at least: 5.8
 Tested up to: 6.7.1
 Requires PHP: 8.0
 Tags: Elementor, categories, widgets, WordPress, Elementor Addons
+Requires Plugins: elementor
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,6 +29,7 @@ define( 'SMART_CATEGORY_ADDONS_INC', SMART_CATEGORY_ADDONS_PATH . 'includes/' );
 
 // Include the main plugin file
 require_once SMART_CATEGORY_ADDONS_INC . 'plugin.php';
+require_once SMART_CATEGORY_ADDONS_INC . 'register-dynamic-tags.php';
 // Initialize the plugin
 \SmartCategoryAddons\Plugin::instance();
 
