@@ -30,3 +30,14 @@ define( 'SMART_CATEGORY_ADDONS_INC', SMART_CATEGORY_ADDONS_PATH . 'includes/' );
 require_once SMART_CATEGORY_ADDONS_INC . 'plugin.php';
 // Initialize the plugin
 \SmartCategoryAddons\Plugin::instance();
+
+// Enqueue plugin styles
+function smart_category_addons_enqueue_styles() {
+    wp_enqueue_style(
+        'smart-category-addons-style',
+        SMART_CATEGORY_ADDONS_URL . 'assets/css/style.css',
+        [],
+        SMART_CATEGORY_ADDONS_VERSION
+    );
+}
+add_action( 'wp_enqueue_scripts', 'smart_category_addons_enqueue_styles' );

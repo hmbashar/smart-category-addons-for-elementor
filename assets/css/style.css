@@ -1,0 +1,14 @@
+.category-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.category-title .category-link {
+    text-decoration: none;
+    color: #0073aa;
+}
+
+.category-title .category-link:hover { 
+    color: #005177;
+}
