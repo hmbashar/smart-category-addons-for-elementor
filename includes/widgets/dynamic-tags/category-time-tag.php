@@ -7,13 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-class Category_Name_Tag extends Tag {
+class Category_Time_Tag extends Tag {
     public function get_name() {
-        return 'category_title';
+        return 'category_time';
     }
 
     public function get_title() {
-        return esc_html__( 'Category Title', 'smart-category-addons' );
+        return esc_html__( 'Category Time', 'smart-category-addons' );
     }
 
     public function get_group() {
@@ -26,10 +26,11 @@ class Category_Name_Tag extends Tag {
 
     public function render() {
         $categories = get_the_category();
+
         if ( ! empty( $categories ) && is_array( $categories ) ) {
-            echo esc_html( $categories[0]->name );
+            echo esc_html( get_the_time( 'g:i A' ) ); // Displays the time
         } else {
-            echo esc_html__( 'Uncategorized', 'smart-category-addons' );
+            echo esc_html__( 'No Time', 'smart-category-addons' );
         }
     }
 }
