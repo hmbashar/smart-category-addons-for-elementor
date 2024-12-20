@@ -44,7 +44,7 @@ class Category_Description_Widget extends Widget_Base
             [
                 'label' => esc_html__('Number of Categories', 'smart-category-addons'),
                 'type' => Controls_Manager::NUMBER,
-                'default' => 3,
+                'default' => 1,
                 'min' => 1,
                 'step' => 1,
                 'description' => esc_html__('Set the maximum number of categories to display with descriptions.', 'smart-category-addons'),
@@ -134,12 +134,12 @@ class Category_Description_Widget extends Widget_Base
                 $description = category_description($category->term_id); // Get category description
                 if ($description) {
                     echo '<div class="category-description-item">';
-                    echo '<h3 class="category-name">' . esc_html($category->name) . '</h3>'; // Category name
+                    //echo '<h3 class="category-name">' . esc_html($category->name) . '</h3>'; // Category name
                     echo '<div class="category-description">' . wp_kses_post($description) . '</div>'; // Category description
                     echo '</div>';
                 } else {
                     echo '<div class="category-description-item">';
-                    echo '<h3 class="category-name">' . esc_html($category->name) . '</h3>'; // Category name
+                   // echo '<h3 class="category-name">' . esc_html($category->name) . '</h3>'; // Category name
                     echo '<p class="category-description">' . esc_html__('No description available.', 'smart-category-addons') . '</p>';
                     echo '</div>';
                 }

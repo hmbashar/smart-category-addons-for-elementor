@@ -47,13 +47,13 @@ class Category_Title_Widget extends Widget_Base
             [
                 'label' => esc_html__('Number of Categories to Show', 'smart-category-addons'),
                 'type' => Controls_Manager::NUMBER,
-                'default' => 3,
+                'default' => 1,
                 'min' => 1,
                 'step' => 1,
                 'description' => esc_html__('Set how many categories to display. If the post has fewer categories, all available categories will be shown.', 'smart-category-addons'),
             ]
         );
-
+        
         $this->end_controls_section();
         // Style Tab
         $this->start_controls_section(
