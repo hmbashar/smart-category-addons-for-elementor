@@ -71,7 +71,7 @@ class Category_Title_Widget extends Widget_Base
                 'label' => esc_html__('Text Color', 'smart-category-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .category-title a' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .category-title p' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -82,7 +82,7 @@ class Category_Title_Widget extends Widget_Base
                 'label' => esc_html__('Hover Color', 'smart-category-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .category-title a:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .category-title p:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -92,7 +92,7 @@ class Category_Title_Widget extends Widget_Base
             [
                 'name' => 'category_title_typography',
                 'label' => esc_html__('Typography', 'smart-category-addons'),
-                'selector' => '{{WRAPPER}} .category-title a',
+                'selector' => '{{WRAPPER}} .category-title p',
             ]
         );
 
@@ -102,7 +102,7 @@ class Category_Title_Widget extends Widget_Base
             [
                 'name' => 'category_title_text_shadow',
                 'label' => esc_html__('Text Shadow', 'smart-category-addons'),
-                'selector' => '{{WRAPPER}} .category-title a',
+                'selector' => '{{WRAPPER}} .category-title p',
             ]
         );
 
@@ -127,7 +127,7 @@ class Category_Title_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .category-title a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .category-title p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -149,9 +149,9 @@ class Category_Title_Widget extends Widget_Base
             echo '<p class="category-title">';
             foreach ( $categories as $category ) {
                 // Escape output for security
-                echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="category-link">';
+                echo '<span href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="category-link">';
                 echo esc_html( $category->name );
-                echo '</a>';
+                echo '</span>';
                 
                 // Add separator if not the last category
                 if ( end( $categories ) !== $category ) {
