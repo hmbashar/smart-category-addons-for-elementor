@@ -4,9 +4,9 @@ namespace SmartCategoryAddons;
 use SmartCategoryAddons\DynamicTags\Category_Name_Tag;
 use SmartCategoryAddons\DynamicTags\Category_Description_Tag;
 use SmartCategoryAddons\DynamicTags\Category_ID_Tag;
-use SmartCategoryAddons\DynamicTags\Category_Time_Tag;
-use SmartCategoryAddons\DynamicTags\Category_Date_Tag;
-use SmartCategoryAddons\DynamicTags\Category_Custom_Field_Tag;
+//use SmartCategoryAddons\DynamicTags\Category_Time_Tag;
+//use SmartCategoryAddons\DynamicTags\Category_Date_Tag;
+//use SmartCategoryAddons\DynamicTags\Category_Custom_Field_Tag;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
