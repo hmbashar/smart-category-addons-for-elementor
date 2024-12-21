@@ -50,7 +50,7 @@ class Category_Title_Widget extends Widget_Base
                 'default' => 1,
                 'min' => 1,
                 'step' => 1,
-                'description' => esc_html__('Set how many categories to display. If the post has fewer categories, all available categories will be shown.', 'smart-category-addons'),
+                'description' => esc_html__('Specify the maximum number of categories to display. If the post has fewer categories, all available categories will be shown.', 'smart-category-addons'),
             ]
         );
         
@@ -71,7 +71,7 @@ class Category_Title_Widget extends Widget_Base
                 'label' => esc_html__('Text Color', 'smart-category-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .category-title p' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .category-title .category-link' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -82,7 +82,7 @@ class Category_Title_Widget extends Widget_Base
                 'label' => esc_html__('Hover Color', 'smart-category-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .category-title p:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .category-title .category-link:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -92,7 +92,7 @@ class Category_Title_Widget extends Widget_Base
             [
                 'name' => 'category_title_typography',
                 'label' => esc_html__('Typography', 'smart-category-addons'),
-                'selector' => '{{WRAPPER}} .category-title p',
+                'selector' => '{{WRAPPER}} .category-title .category-link',
             ]
         );
 
@@ -102,7 +102,7 @@ class Category_Title_Widget extends Widget_Base
             [
                 'name' => 'category_title_text_shadow',
                 'label' => esc_html__('Text Shadow', 'smart-category-addons'),
-                'selector' => '{{WRAPPER}} .category-title p',
+                'selector' => '{{WRAPPER}} .category-title .category-link',
             ]
         );
 
@@ -114,7 +114,7 @@ class Category_Title_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .category-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .category-title .category-link' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -127,7 +127,7 @@ class Category_Title_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .category-title p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .category-title .category-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );

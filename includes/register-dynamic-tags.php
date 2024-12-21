@@ -22,16 +22,16 @@ class Register_Dynamic_Tags {
        // require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-name-tag.php';
         require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-description-tag.php';
         require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-id-tag.php';
-        require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-time-tag.php';
-        require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-date-tag.php';
-        require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-custom-field-tag.php';
+        //require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-time-tag.php';
+        //require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-date-tag.php';
+       // require_once SMART_CATEGORY_ADDONS_INC . 'widgets/dynamic-tags/category-custom-field-tag.php';
 
        // $dynamic_tags->register( new Category_Name_Tag() );
         $dynamic_tags->register( new Category_Description_Tag() );
         $dynamic_tags->register( new Category_ID_Tag() );
-        $dynamic_tags->register( new Category_Time_Tag() );
-        $dynamic_tags->register( new Category_Date_Tag() );
-        $dynamic_tags->register( new Category_Custom_Field_Tag() );
+       // $dynamic_tags->register( new Category_Time_Tag() );
+       // $dynamic_tags->register( new Category_Date_Tag() );
+        //$dynamic_tags->register( new Category_Custom_Field_Tag() );
     }
 
     public static function register_new_dynamic_tag_group( $dynamic_tags_manager ) {

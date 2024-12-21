@@ -42,47 +42,47 @@ class Category_Description_Widget extends Widget_Base
         $this->add_control(
             'max_categories',
             [
-                'label' => esc_html__('Number of Categories', 'smart-category-addons'),
+                'label' => esc_html__('Maximum Number of Categories descriptions', 'smart-category-addons'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 1,
                 'min' => 1,
                 'step' => 1,
-                'description' => esc_html__('Set the maximum number of categories to display with descriptions.', 'smart-category-addons'),
-            ]
+                'description' => esc_html__('Specify the maximum number of categories to display along with their descriptions. If the post has fewer categories, all available categories will be shown.', 'smart-category-addons'),
+                ]
         );
 
         $this->end_controls_section();
 
-        // Style Tab for Title
-        $this->start_controls_section(
-            'title_style_section',
-            [
-                'label' => esc_html__('Title', 'smart-category-addons'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
+        // // Style Tab for Title
+        // $this->start_controls_section(
+        //     'title_style_section',
+        //     [
+        //         'label' => esc_html__('Description', 'smart-category-addons'),
+        //         'tab' => Controls_Manager::TAB_STYLE,
+        //     ]
+        // );
 
-        $this->add_control(
-            'title_color',
-            [
-                'label' => esc_html__('Color', 'smart-category-addons'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .category-name' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
+        // $this->add_control(
+        //     'title_color',
+        //     [
+        //         'label' => esc_html__('Color', 'smart-category-addons'),
+        //         'type' => Controls_Manager::COLOR,
+        //         'selectors' => [
+        //             '{{WRAPPER}} .category-name' => 'color: {{VALUE}};',
+        //         ],
+        //     ]
+        // );
 
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'title_typography',
-                'label' => esc_html__('Typography', 'smart-category-addons'),
-                'selector' => '{{WRAPPER}} .category-name',
-            ]
-        );
+        // $this->add_group_control(
+        //     Group_Control_Typography::get_type(),
+        //     [
+        //         'name' => 'title_typography',
+        //         'label' => esc_html__('Typography', 'smart-category-addons'),
+        //         'selector' => '{{WRAPPER}} .category-name',
+        //     ]
+        // );
 
-        $this->end_controls_section();
+        // $this->end_controls_section();
 
         // Style Tab for Description
         $this->start_controls_section(
