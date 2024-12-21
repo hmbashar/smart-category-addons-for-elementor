@@ -33,28 +33,18 @@ class Category_Title_Widget extends Widget_Base
     }
     protected function register_controls()
     {
-        // Content Tab
-        $this->start_controls_section(
-            'content_section',
-            [
-                'label' => esc_html__('Settings', 'smart-category-addons'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
-        );
+       // Content Tab
+        // $this->start_controls_section(
+        //     'content_section',
+        //     [
+        //         'label' => esc_html__('Content', 'smart-category-addons'),
+        //         'tab' => Controls_Manager::TAB_CONTENT,
+        //     ]
+        // );
 
-        $this->add_control(
-            'category_limit',
-            [
-                'label' => esc_html__('Number of Categories to Show', 'smart-category-addons'),
-                'type' => Controls_Manager::NUMBER,
-                'default' => 1,
-                'min' => 1,
-                'step' => 1,
-                'description' => esc_html__('Specify the maximum number of categories to display. If the post has fewer categories, all available categories will be shown.', 'smart-category-addons'),
-            ]
-        );
+ 
         
-        $this->end_controls_section();
+        // $this->end_controls_section();
         // Style Tab
         $this->start_controls_section(
             'style_section',
@@ -135,32 +125,23 @@ class Category_Title_Widget extends Widget_Base
         $this->end_controls_section();
     }
 
-    protected function render() {
+    protected function render()
+    {
         $settings = $this->get_settings_for_display();
-        $category_limit = ! empty( $settings['category_limit'] ) ? (int) $settings['category_limit'] : 3;
 
         // Get the current post's categories
         $categories = get_the_category();
 
-        if ( ! empty( $categories ) && is_array( $categories ) ) {
-            // Limit the categories to the user-defined number
-            $categories = array_slice( $categories, 0, $category_limit );
-
+        if (!empty($categories) && is_array($categories)) {
+            // Display the first category only
+            $category = $categories[0];
             echo '<p class="category-title">';
-            foreach ( $categories as $category ) {
-                // Escape output for security
-                echo '<span href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="category-link">';
-                echo esc_html( $category->name );
-                echo '</span>';
-                
-                // Add separator if not the last category
-                if ( end( $categories ) !== $category ) {
-                    echo ', ';
-                }
-            }
+            echo '<span class="category-link">';
+            echo esc_html($category->name);
+            echo '</span>';
             echo '</p>';
         } else {
-            echo '<p class="category-title">' . esc_html__( 'Uncategorized', 'smart-category-addons' ) . '</p>';
+            echo '<p class="category-title">' . esc_html__('Uncategorized', 'smart-category-addons') . '</p>';
         }
     }
 }
